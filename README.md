@@ -1,28 +1,39 @@
-# Skill Factory
+# PM Skill Factory
 
-Creates Claude Code skills with built-in best practices from Anthropic's official documentation.
+Claude Code skills for Product Managers. Frameworks, workflows, and domain knowledge that Claude activates automatically when you're working on product tasks.
 
-## Why Skills?
+## Skills Included
 
-Claude can't hold everything in mind at once. Squirrel!
+### Product Thinking (auto-trigger)
+| Skill | Description |
+|-------|-------------|
+| `lean-delivery` | Story slicing, Hamburger Method, micro-steps |
+| `lean-analytics` | SaaS metrics, OMTM, cohorts, churn, MRR |
+| `impact-growth` | Impact-Driven Growth, CPVM, outcomes over outputs |
+| `user-research` | Research synthesis, pain points, JTBD |
+| `business-strategy` | Strategy Kernel (Rumelt), diagnosis, coherent actions |
+| `executive-communication` | Executive summaries, stakeholder framing |
+| `technical-review` | Feasibility assessment, spec review, effort estimation |
+| `lean-product-manager` | Lean Startup, Build-Measure-Learn, team management |
 
-Skills solve the problem of distracted agent by releasing information gradually:
-1. **Startup**: Only name + description loaded (~100 tokens per skill)
-2. **When triggered**: Full instructions loaded
-3. **As needed**: References loaded only when the task requires them
-
-This keeps context lean while making rich knowledge available on demand.
-
-**Skills vs slash commands**: 
-- Skills are model-invoked (Claude applies them when relevant based on the frontmatter and then relevant links in SKILL.md). 
-- Slash commands are user-invoked (`/command`).
+### PM Workflows (auto-trigger)
+| Skill | Description |
+|-------|-------------|
+| `create-prd` | Product Requirements Documents |
+| `write-user-stories` | User stories with acceptance criteria |
+| `analyze-feedback` | Feedback analysis, themes, pain points |
+| `prioritize-features` | RICE, ICE, Value vs Effort, Kano, MoSCoW |
+| `competitive-analysis` | Competitor research, SWOT, positioning |
+| `roadmap-planning` | Strategic roadmaps with themes and sequencing |
+| `feature-discovery` | Idea validation: pursue, hold, or kill |
+| `calculate-roi` | ROI, payback period, business cases |
 
 ## Quick Start
 
-1. Open this folder in Claude Code
-2. Ask it to create a new skill
-3. Answer a few questions — point to references or ask Claude to search online
-4. Find your skill in `output_skills/[category]/[skill-name]/`
+1. Clone this repo
+2. Install skills globally: symlink each skill folder to `~/.claude/skills/`
+3. Restart Claude Code
+4. Claude will activate skills automatically based on context
 
 ## Using Your Skill
 
@@ -61,9 +72,17 @@ Without this line in your global CLAUDE.md, the `STARTER_CHARACTER` lines in ski
 
 Pulls latest skill patterns from Anthropic.
 
+## Creating New Skills
+
+This repo is also a skill factory. Open this folder in Claude Code, ask it to create a new skill, and it will follow the process in `docs/create_new_skill-process.md`.
+
 ## Structure
 
 ```
-docs/           — Skill creation knowledge and patterns
-output_skills/  — Generated skills organized by category
+output_skills/
+  product-management/  — PM skills (16)
+  design/              — Design skills
+  practices/           — Delivery practices
+  tools/               — Utility skills
+docs/                  — Skill creation knowledge and patterns
 ```
